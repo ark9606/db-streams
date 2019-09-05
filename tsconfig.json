@@ -10,7 +10,9 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "types": ["reflect-metadata", "node", "jest"]
   },
   "exclude": ["node_modules"]
 }
