@@ -21,6 +21,7 @@ async function main() {
 
   connection = await createConnection();
   const repository = getRepository(entity);
+  // problem with read stream
   const dbStream = await repository.createQueryBuilder(table).stream();
   const dataTransformer = new DataTransformer();
 
@@ -28,13 +29,12 @@ async function main() {
   const fileName = `documents/${table}_${hash}.csv`;
   const writeStream = fs.createWriteStream(fileName, { encoding: 'utf8' });
 
-  dbStream
-    .pipe(dataTransformer)
-    .pipe(writeStream)
-    .on('close', async () => {
-      console.log('Done');
-      await connection.close();
-    });
+  await pipeline(
+    dbStream,
+    dataTransformer,
+    writeStream
+  );
+  console.log('Done');
 }
 
 main().catch(async e => {

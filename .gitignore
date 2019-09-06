@@ -39,3 +39,5 @@ lerna-debug.log*
 reports/cucumber_report.json
 reports/cucumber_report.html
 package-lock.json
+
+documents
