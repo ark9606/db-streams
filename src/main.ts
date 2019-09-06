@@ -34,6 +34,7 @@ async function main() {
     dataTransformer,
     writeStream
   );
+  await connection.close();
   console.log('Done');
 }
 

@@ -18,10 +18,4 @@ export class User extends EntityBase {
 
   @Column({ nullable: true })
   role: string;
-
-  @Column()
-  managerId: number;
-
-  @Column()
-  managerFullname: string;
 }

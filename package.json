@@ -13,8 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mssql": "^5.1.0",
     "@types/node": "10.14.4",
+    "mssql": "^5.1.0",
+    "pg": "^7.12.1",
+    "pg-query-stream": "^2.0.0",
     "typeorm": "github:arkady-zelensky/typeorm-build"
   },
   "devDependencies": {
